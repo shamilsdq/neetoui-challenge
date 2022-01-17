@@ -1,7 +1,10 @@
 import React from "react";
 
-const NotesIcon = () => <i className="text-2xl ri-file-text-line" />;
-const SettingsIcon = () => <i className="text-2xl ri-settings-2-line" />;
+import { Notes, UserCircle, Settings } from "@bigbinary/neeto-icons";
+
+const NotesIcon = () => <Notes color="#68737D" size={25} />;
+const ContactsIcon = () => <UserCircle color="#68737D" size={25} />;
+const SettingsIcon = () => <Settings color="#68737D" size={25} />;
 
 export const APP_NAME = "neetoui-challenge";
 
@@ -14,6 +17,11 @@ export const SIDENAV_LINKS = [
     label: "Notes",
     to: "/notes",
     icon: NotesIcon,
+  },
+  {
+    label: "Contacts",
+    to: "/contacts",
+    icon: ContactsIcon,
   },
   {
     label: "Settings",
