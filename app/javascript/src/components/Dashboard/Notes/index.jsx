@@ -6,6 +6,7 @@ import { PageLoader } from "neetoui/v2";
 import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
+import NoteList from "./NoteList";
 import SideMenu from "./SideMenu";
 import TopHeader from "./TopHeader";
 
@@ -40,6 +41,7 @@ const Notes = () => {
       {notes.length ? (
         <div className="flex flex-col w-full px-5">
           <TopHeader toggleSideMenu={() => setShowSideMenu(prev => !prev)} />
+          <NoteList notes={notes} />
         </div>
       ) : (
         <EmptyState
