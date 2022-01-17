@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Search, Plus, Settings } from "@bigbinary/neeto-icons";
-import { Typography } from "@bigbinary/neetoui/v2";
-import { MenuBar } from "@bigbinary/neetoui/v2/layouts";
+import { Typography } from "neetoui/v2";
+import { MenuBar } from "neetoui/v2/layouts";
 
 const SideMenu = ({ isOpen }) => (
   <MenuBar showMenu={isOpen} title="Notes">

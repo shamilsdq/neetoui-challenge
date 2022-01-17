@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Search, Plus } from "@bigbinary/neeto-icons";
-import { Input, Button } from "@bigbinary/neetoui/v2";
-import { Header } from "@bigbinary/neetoui/v2/layouts";
+import { Input, Button } from "neetoui/v2";
+import { Header } from "neetoui/v2/layouts";
 
 const TopHeader = ({ toggleSideMenu }) => (
   <Header

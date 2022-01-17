@@ -1,7 +1,7 @@
 import React from "react";
 
 import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
-import { Typography, Dropdown, Tag, Tooltip } from "@bigbinary/neetoui/v2";
+import { Typography, Dropdown, Tag, Tooltip } from "neetoui/v2";
 
 const NoteList = ({ notes }) => (
   <div className="ml-1">
