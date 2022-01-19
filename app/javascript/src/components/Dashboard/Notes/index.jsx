@@ -7,6 +7,7 @@ import EmptyState from "components/Common/EmptyState";
 
 import { SAMPLE_NOTES } from "./constants";
 import DeleteAlert from "./DeleteAlert";
+import FormPane from "./FormPane";
 import NoteList from "./NoteList";
 import SideMenu from "./SideMenu";
 import TopHeader from "./TopHeader";
@@ -14,6 +15,7 @@ import TopHeader from "./TopHeader";
 const Notes = () => {
   const [loading, setLoading] = useState(true);
   const [showSideMenu, setShowSideMenu] = useState(true);
+  const [showFormPane, setShowFormPane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [notes, setNotes] = useState([]);
 
@@ -39,6 +41,8 @@ const Notes = () => {
   return (
     <div className="flex w-full">
       <SideMenu isOpen={showSideMenu} />
+      <FormPane isOpen={showFormPane} />
+
       {notes.length ? (
         <div className="flex flex-col w-full px-5">
           <TopHeader toggleSideMenu={() => setShowSideMenu(prev => !prev)} />
@@ -53,7 +57,7 @@ const Notes = () => {
           image={EmptyNotesListImage}
           title="Looks like you don't have any notes!"
           subtitle="Add your notes to send customized emails to them."
-          primaryAction={() => {}}
+          primaryAction={() => setShowFormPane(true)}
           primaryActionLabel="Add New Note"
         />
       )}
