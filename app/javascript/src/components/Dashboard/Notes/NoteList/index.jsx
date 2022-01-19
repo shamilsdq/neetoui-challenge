@@ -1,43 +1,21 @@
 import React from "react";
 
-import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
-import { Typography, Dropdown, Tag, Tooltip } from "neetoui/v2";
+import { Typography } from "neetoui/v2";
+
+import NoteFooter from "./NoteFooter";
+import NoteHeader from "./NoteHeader";
 
 const NoteList = ({ notes }) => (
   <div className="flex-1 ml-1 overflow-y-auto">
-    {notes.map(note => (
+    {notes.map((note, index) => (
       <div
-        key={note.title}
+        key={note.title + index}
         className="p-5 my-5 bg-white border rounded-sm neeto-ui-border-gray-300 neeto-ui-shadow-xs"
       >
-        <div className="flex justify-between">
-          <Typography weight="semibold">{note.title}</Typography>
-          <Dropdown icon={MenuVertical} buttonStyle="icon">
-            <li className="m-2">Edit</li>
-            <li className="m-2">Delete</li>
-          </Dropdown>
-        </div>
+        <NoteHeader title={note.title} />
         <Typography style="body2">{note.description}</Typography>
         <hr className="my-4" />
-        <div className="flex items-center justify-between">
-          <Tag
-            label={note.category}
-            size="small"
-            className="neeto-ui-text-gray-600 rounded-xs neeto-ui-bg-gray-100"
-          />
-          <div className="flex items-center">
-            <Clock size="12" />
-            <Tooltip placement={"bottom-end"} content={"Wednesday, 10:30AM"}>
-              <span className="mx-1 text-xs neeto-ui-text-gray-600">
-                Drafted 2 hours ago
-              </span>
-            </Tooltip>
-            <img
-              src="https://randomuser.me/api/portraits/med/men/13.jpg"
-              className="w-6 ml-2 rounded-full"
-            />
-          </div>
-        </div>
+        <NoteFooter category={note.category} />
       </div>
     ))}
   </div>
