@@ -13,11 +13,11 @@ const FormPane = ({ isOpen, close }) => (
       </Typography>
     </Pane.Header>
 
-    <Pane.Body>
+    <Pane.Body className="pt-2">
       <CreateForm />
     </Pane.Body>
 
-    <Pane.Footer>
+    <Pane.Footer className="border-t">
       <Button label="Save Changes" size="large" icon={Check} onClick={close} />
       <Button
         label="Cancel"
