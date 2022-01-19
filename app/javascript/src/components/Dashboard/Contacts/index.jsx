@@ -5,6 +5,8 @@ import { PageLoader } from "neetoui/v2";
 
 import EmptyState from "components/Common/EmptyState";
 
+import { SAMPLE_CONTACTS } from "./constants";
+
 const Notes = () => {
   const [loading, setLoading] = useState(true);
   const [contacts, setContacts] = useState([]);
@@ -16,7 +18,7 @@ const Notes = () => {
   const fetchContacts = async () => {
     try {
       setLoading(true);
-      setContacts([]);
+      setContacts(SAMPLE_CONTACTS);
     } catch (error) {
       logger.error(error);
     } finally {
