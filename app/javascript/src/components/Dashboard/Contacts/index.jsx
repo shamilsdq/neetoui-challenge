@@ -7,9 +7,11 @@ import EmptyState from "components/Common/EmptyState";
 
 import { SAMPLE_CONTACTS } from "./constants";
 import SideMenu from "./SideMenu";
+import TopHeader from "./TopHeader";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
+  const [showSideMenu, setShowSideMenu] = useState(true);
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
@@ -33,9 +35,11 @@ const Notes = () => {
 
   return (
     <div className="flex w-full">
-      <SideMenu isOpen={true} />
+      <SideMenu isOpen={showSideMenu} />
       {contacts.length ? (
-        <div className="flex flex-col w-full px-5"></div>
+        <div className="flex flex-col w-full px-5">
+          <TopHeader toggleSideMenu={() => setShowSideMenu(prev => !prev)} />
+        </div>
       ) : (
         <EmptyState
           image={EmptyNotesListImage}
