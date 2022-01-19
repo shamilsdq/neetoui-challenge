@@ -6,6 +6,7 @@ import { PageLoader } from "neetoui/v2";
 import EmptyState from "components/Common/EmptyState";
 
 import { SAMPLE_NOTES } from "./constants";
+import DeleteAlert from "./DeleteAlert";
 import NoteList from "./NoteList";
 import SideMenu from "./SideMenu";
 import TopHeader from "./TopHeader";
@@ -13,6 +14,7 @@ import TopHeader from "./TopHeader";
 const Notes = () => {
   const [loading, setLoading] = useState(true);
   const [showSideMenu, setShowSideMenu] = useState(true);
+  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
@@ -40,7 +42,11 @@ const Notes = () => {
       {notes.length ? (
         <div className="flex flex-col w-full px-5">
           <TopHeader toggleSideMenu={() => setShowSideMenu(prev => !prev)} />
-          <NoteList notes={notes} />
+          <NoteList notes={notes} deleteNote={() => setShowDeleteAlert(true)} />
+          <DeleteAlert
+            isOpen={showDeleteAlert}
+            close={() => setShowDeleteAlert(false)}
+          />
         </div>
       ) : (
         <EmptyState
