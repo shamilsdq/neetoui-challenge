@@ -42,7 +42,7 @@ const Notes = () => {
       {notes.length ? (
         <div className="flex flex-col w-full px-5">
           <TopHeader toggleSideMenu={() => setShowSideMenu(prev => !prev)} />
-          <NoteList notes={notes} />
+          <NoteList notes={notes} deleteNote={() => setShowDeleteAlert(true)} />
           <DeleteAlert
             isOpen={showDeleteAlert}
             close={() => setShowDeleteAlert(false)}
