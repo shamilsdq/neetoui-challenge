@@ -41,11 +41,14 @@ const Notes = () => {
   return (
     <div className="flex w-full">
       <SideMenu isOpen={showSideMenu} />
-      <FormPane isOpen={showFormPane} />
+      <FormPane isOpen={showFormPane} close={() => setShowFormPane(false)} />
 
       {notes.length ? (
         <div className="flex flex-col w-full px-5">
-          <TopHeader toggleSideMenu={() => setShowSideMenu(prev => !prev)} />
+          <TopHeader
+            toggleSideMenu={() => setShowSideMenu(prev => !prev)}
+            openFormPane={() => setShowFormPane(true)}
+          />
           <NoteList notes={notes} deleteNote={() => setShowDeleteAlert(true)} />
           <DeleteAlert
             isOpen={showDeleteAlert}
