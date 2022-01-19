@@ -23,7 +23,7 @@ const Notes = () => {
     fetchNotes();
   }, []);
 
-  const fetchNotes = async () => {
+  const fetchNotes = () => {
     try {
       setLoading(true);
       setNotes(SAMPLE_NOTES);

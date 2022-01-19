@@ -15,7 +15,7 @@ const Notes = () => {
     fetchContacts();
   }, []);
 
-  const fetchContacts = async () => {
+  const fetchContacts = () => {
     try {
       setLoading(true);
       setContacts(SAMPLE_CONTACTS);
