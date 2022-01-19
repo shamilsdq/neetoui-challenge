@@ -4,7 +4,7 @@ import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
 import { Typography, Dropdown, Tag, Tooltip } from "neetoui/v2";
 
 const NoteList = ({ notes }) => (
-  <div className="ml-1">
+  <div className="flex-1 ml-1 overflow-y-auto">
     {notes.map(note => (
       <div
         key={note.title}
@@ -13,15 +13,15 @@ const NoteList = ({ notes }) => (
         <div className="flex justify-between">
           <Typography weight="semibold">{note.title}</Typography>
           <Dropdown icon={MenuVertical} buttonStyle="icon">
-            <li>Edit</li>
-            <li>Delete</li>
+            <li className="m-2">Edit</li>
+            <li className="m-2">Delete</li>
           </Dropdown>
         </div>
         <Typography style="body2">{note.description}</Typography>
         <hr className="my-4" />
         <div className="flex items-center justify-between">
           <Tag
-            label="Getting Started"
+            label={note.category}
             size="small"
             className="neeto-ui-text-gray-600 rounded-xs neeto-ui-bg-gray-100"
           />

@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 import EmptyNotesListImage from "images/EmptyNotesList";
 import { PageLoader } from "neetoui/v2";
 
-import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
+import { SAMPLE_NOTES } from "./constants";
 import NoteList from "./NoteList";
 import SideMenu from "./SideMenu";
 import TopHeader from "./TopHeader";
@@ -22,8 +22,7 @@ const Notes = () => {
   const fetchNotes = async () => {
     try {
       setLoading(true);
-      const { data } = await notesApi.fetch();
-      setNotes(data.notes);
+      setNotes(SAMPLE_NOTES);
     } catch (error) {
       logger.error(error);
     } finally {
