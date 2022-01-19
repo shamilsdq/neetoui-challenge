@@ -6,6 +6,7 @@ import { PageLoader } from "neetoui/v2";
 import EmptyState from "components/Common/EmptyState";
 
 import { SAMPLE_CONTACTS } from "./constants";
+import SideMenu from "./SideMenu";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
@@ -32,6 +33,7 @@ const Notes = () => {
 
   return (
     <div className="flex w-full">
+      <SideMenu isOpen={true} />
       {contacts.length ? (
         <div className="flex flex-col w-full px-5"></div>
       ) : (
