@@ -9,6 +9,7 @@ import EmptyState from "components/Common/EmptyState";
 import FormPane from "components/Common/FormPane";
 
 import { SAMPLE_CONTACTS } from "./constants";
+import Form from "./Form";
 import SideMenu from "./SideMenu";
 import Table from "./Table";
 import TopHeader from "./TopHeader";
@@ -41,7 +42,9 @@ const Contacts = () => {
         entity="Contact"
         isOpen={showFormPane}
         close={() => setShowFormPane(false)}
-      ></FormPane>
+      >
+        <Form />
+      </FormPane>
 
       {contacts.length ? (
         <Container>
