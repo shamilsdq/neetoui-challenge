@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 import EmptyNotesListImage from "images/EmptyNotesList";
 import { PageLoader } from "neetoui/v2";
 
+import DeleteAlert from "components/Common/DeleteAlert";
 import EmptyState from "components/Common/EmptyState";
 
 import { SAMPLE_NOTES } from "./constants";
-import DeleteAlert from "./DeleteAlert";
 import FormPane from "./FormPane";
 import NoteList from "./NoteList";
 import SideMenu from "./SideMenu";
@@ -46,6 +46,7 @@ const Notes = () => {
           />
           <NoteList notes={notes} deleteNote={() => setShowDeleteAlert(true)} />
           <DeleteAlert
+            entity="Note"
             isOpen={showDeleteAlert}
             close={() => setShowDeleteAlert(false)}
           />

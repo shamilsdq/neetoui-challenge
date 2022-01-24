@@ -4,6 +4,7 @@ import EmptyNotesListImage from "images/EmptyNotesList";
 import { PageLoader } from "neetoui/v2";
 import { Container } from "neetoui/v2/layouts";
 
+import DeleteAlert from "components/Common/DeleteAlert";
 import EmptyState from "components/Common/EmptyState";
 
 import { SAMPLE_CONTACTS } from "./constants";
@@ -14,6 +15,7 @@ import TopHeader from "./TopHeader";
 const Contacts = () => {
   const [loading, setLoading] = useState(true);
   const [showSideMenu, setShowSideMenu] = useState(true);
+  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
@@ -36,7 +38,10 @@ const Contacts = () => {
       {contacts.length ? (
         <Container>
           <TopHeader toggleSideMenu={() => setShowSideMenu(!showSideMenu)} />
-          <Table data={contacts} />
+          <Table
+            data={contacts}
+            deleteContact={() => setShowDeleteAlert(true)}
+          />
         </Container>
       ) : (
         <EmptyState
@@ -47,6 +52,11 @@ const Contacts = () => {
           primaryActionLabel="Add New Contact"
         />
       )}
+      <DeleteAlert
+        entity="Contact"
+        isOpen={showDeleteAlert}
+        close={() => setShowDeleteAlert(false)}
+      />
     </>
   );
 };
