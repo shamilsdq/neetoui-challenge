@@ -2,7 +2,7 @@ import React from "react";
 
 import { Input, Textarea, Select } from "neetoui/v2";
 
-const CreateForm = () => (
+const Form = () => (
   <form className="w-full px-2 space-y-6">
     <Input
       label="Title"
@@ -28,4 +28,4 @@ const CreateForm = () => (
   </form>
 );
 
-export default CreateForm;
+export default Form;

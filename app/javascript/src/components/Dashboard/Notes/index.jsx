@@ -5,9 +5,10 @@ import { PageLoader } from "neetoui/v2";
 
 import DeleteAlert from "components/Common/DeleteAlert";
 import EmptyState from "components/Common/EmptyState";
+import FormPane from "components/Common/FormPane";
 
 import { SAMPLE_NOTES } from "./constants";
-import FormPane from "./FormPane";
+import Form from "./Form";
 import NoteList from "./NoteList";
 import SideMenu from "./SideMenu";
 import TopHeader from "./TopHeader";
@@ -36,7 +37,9 @@ const Notes = () => {
   return (
     <div className="flex w-full">
       <SideMenu isOpen={showSideMenu} />
-      <FormPane isOpen={showFormPane} close={() => setShowFormPane(false)} />
+      <FormPane isOpen={showFormPane} close={() => setShowFormPane(false)}>
+        <Form />
+      </FormPane>
 
       {notes.length ? (
         <div className="flex flex-col w-full px-5">
