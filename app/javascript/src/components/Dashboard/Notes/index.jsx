@@ -23,15 +23,10 @@ const Notes = () => {
     fetchNotes();
   }, []);
 
-  const fetchNotes = async () => {
-    try {
-      setLoading(true);
-      setNotes(SAMPLE_NOTES);
-    } catch (error) {
-      logger.error(error);
-    } finally {
-      setLoading(false);
-    }
+  const fetchNotes = () => {
+    setLoading(true);
+    setNotes(SAMPLE_NOTES);
+    setLoading(false);
   };
 
   if (loading) {

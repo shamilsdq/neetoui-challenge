@@ -1,0 +1,32 @@
+.ant-table-row:nth-child(odd) {
+  background: #f8f9f9;
+}
+
+th.ant-table-cell {
+  border-bottom: none !important;
+  padding: 20px 0 !important;
+}
+td.ant-table-cell {
+  border-bottom: none !important;
+  padding: 15px 0 !important;
+}
+
+ul.ant-table-pagination {
+  margin-top: 35px !important;
+}
+
+button.ant-pagination-item-link {
+  border: none !important;
+}
+
+li.ant-pagination-item {
+  background: #e9ebed;
+  border: none;
+}
+
+li.ant-pagination-item-active {
+  background: #2f3941 !important;
+}
+li.ant-pagination-item-active > a {
+  color: #ffffff !important;
+}
