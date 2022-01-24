@@ -11,7 +11,7 @@ import ContactTable from "./ContactTable";
 import SideMenu from "./SideMenu";
 import TopHeader from "./TopHeader";
 
-const Notes = () => {
+const Contacts = () => {
   const [loading, setLoading] = useState(true);
   const [showSideMenu, setShowSideMenu] = useState(true);
   const [contacts, setContacts] = useState([]);
@@ -21,14 +21,9 @@ const Notes = () => {
   }, []);
 
   const fetchContacts = () => {
-    try {
-      setLoading(true);
-      setContacts(SAMPLE_CONTACTS);
-    } catch (error) {
-      logger.error(error);
-    } finally {
-      setLoading(false);
-    }
+    setLoading(true);
+    setContacts(SAMPLE_CONTACTS);
+    setLoading(false);
   };
 
   if (loading) {
@@ -56,4 +51,4 @@ const Notes = () => {
   );
 };
 
-export default Notes;
+export default Contacts;

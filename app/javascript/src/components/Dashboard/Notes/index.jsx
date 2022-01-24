@@ -24,14 +24,9 @@ const Notes = () => {
   }, []);
 
   const fetchNotes = () => {
-    try {
-      setLoading(true);
-      setNotes(SAMPLE_NOTES);
-    } catch (error) {
-      logger.error(error);
-    } finally {
-      setLoading(false);
-    }
+    setLoading(true);
+    setNotes(SAMPLE_NOTES);
+    setLoading(false);
   };
 
   if (loading) {
