@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { MenuHorizontal } from "@bigbinary/neeto-icons";
 import { Table as NeetoTable, Typography, Avatar, Dropdown } from "neetoui/v2";
 
-const Table = ({ data }) => {
+const Table = ({ data, deleteContact }) => {
   const [pageNumber, setPageNumber] = useState(1);
   const [pageSize, setPageSize] = useState(9);
 
@@ -46,7 +46,7 @@ const Table = ({ data }) => {
       render: () => (
         <Dropdown icon={() => <MenuHorizontal />} buttonStyle="text">
           <li>Edit</li>
-          <li>Delete</li>
+          <li onClick={deleteContact}>Delete</li>
         </Dropdown>
       ),
     },

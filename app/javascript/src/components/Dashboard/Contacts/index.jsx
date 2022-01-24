@@ -15,7 +15,7 @@ import TopHeader from "./TopHeader";
 const Contacts = () => {
   const [loading, setLoading] = useState(true);
   const [showSideMenu, setShowSideMenu] = useState(true);
-  const [showDeleteAlert, setShowDeleteAlert] = useState(true);
+  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
@@ -38,7 +38,10 @@ const Contacts = () => {
       {contacts.length ? (
         <Container>
           <TopHeader toggleSideMenu={() => setShowSideMenu(!showSideMenu)} />
-          <Table data={contacts} />
+          <Table
+            data={contacts}
+            deleteContact={() => setShowDeleteAlert(true)}
+          />
         </Container>
       ) : (
         <EmptyState
