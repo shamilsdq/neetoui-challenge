@@ -7,7 +7,11 @@ import DeleteAlert from "components/Common/DeleteAlert";
 import EmptyState from "components/Common/EmptyState";
 import FormPane from "components/Common/FormPane";
 
-import { SAMPLE_NOTES, INITIAL_FORM_VALUES } from "./constants";
+import {
+  SAMPLE_NOTES,
+  INITIAL_FORM_VALUES,
+  VALIDATION_SCHEMA,
+} from "./constants";
 import Form from "./Form";
 import NoteList from "./NoteList";
 import SideMenu from "./SideMenu";
@@ -42,6 +46,7 @@ const Notes = () => {
         isOpen={showFormPane}
         close={() => setShowFormPane(false)}
         initialValues={INITIAL_FORM_VALUES}
+        validationSchema={VALIDATION_SCHEMA}
       >
         <Form />
       </FormPane>

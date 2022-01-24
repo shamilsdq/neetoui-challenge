@@ -8,7 +8,11 @@ import DeleteAlert from "components/Common/DeleteAlert";
 import EmptyState from "components/Common/EmptyState";
 import FormPane from "components/Common/FormPane";
 
-import { SAMPLE_CONTACTS, INITIAL_FORM_VALUES } from "./constants";
+import {
+  SAMPLE_CONTACTS,
+  INITIAL_FORM_VALUES,
+  VALIDATION_SCHEMA,
+} from "./constants";
 import Form from "./Form";
 import SideMenu from "./SideMenu";
 import Table from "./Table";
@@ -43,6 +47,7 @@ const Contacts = () => {
         isOpen={showFormPane}
         close={() => setShowFormPane(false)}
         initialValues={INITIAL_FORM_VALUES}
+        validationSchema={VALIDATION_SCHEMA}
       >
         <Form />
       </FormPane>

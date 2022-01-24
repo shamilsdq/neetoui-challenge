@@ -4,7 +4,14 @@ import { Check } from "@bigbinary/neeto-icons";
 import { Formik, Form } from "formik";
 import { Pane, Typography, Button, Toastr } from "neetoui/v2";
 
-const FormPane = ({ entity, isOpen, close, children, initialValues }) => {
+const FormPane = ({
+  entity,
+  isOpen,
+  close,
+  children,
+  initialValues,
+  validationSchema,
+}) => {
   const submit = () => {
     Toastr.success(`${entity} created successfully.`);
     close();
@@ -18,7 +25,11 @@ const FormPane = ({ entity, isOpen, close, children, initialValues }) => {
         </Typography>
       </Pane.Header>
 
-      <Formik initialValues={initialValues} onSubmit={submit}>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={submit}
+      >
         {() => (
           <Form>
             <Pane.Body className="pt-2">{children}</Pane.Body>
