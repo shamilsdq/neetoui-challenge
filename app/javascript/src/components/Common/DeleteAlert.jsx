@@ -2,10 +2,10 @@ import React from "react";
 
 import { Alert } from "neetoui/v2";
 
-const DeleteAlert = ({ isOpen, close }) => (
+const DeleteAlert = ({ entity, isOpen, close }) => (
   <Alert
-    title="Delete Note"
-    message="Are you sure you want to delete the note? This cannot be undone."
+    title={`Delete ${entity}`}
+    message={`Are you sure you want to delete the ${entity.toLowerCase()}? This cannot be undone.`}
     size="md"
     isOpen={isOpen}
     onSubmit={close}
