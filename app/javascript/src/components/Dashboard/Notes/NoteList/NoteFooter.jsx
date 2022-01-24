@@ -12,7 +12,7 @@ const NoteFooter = ({ category }) => (
     />
     <div className="flex items-center">
       <Clock size="12" />
-      <Tooltip placement={"bottom-end"} content={"Wednesday, 10:30AM"}>
+      <Tooltip placement="bottom-end" content="Wednesday, 10:30AM">
         <span className="mx-1 text-xs neeto-ui-text-gray-600">
           Drafted 2 hours ago
         </span>
