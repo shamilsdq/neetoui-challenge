@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 
 import EmptyNotesListImage from "images/EmptyNotesList";
 import { PageLoader } from "neetoui/v2";
+import { Container } from "neetoui/v2/layouts";
 
 import EmptyState from "components/Common/EmptyState";
 
 import { SAMPLE_CONTACTS } from "./constants";
+import ContactTable from "./ContactTable";
 import SideMenu from "./SideMenu";
 import TopHeader from "./TopHeader";
 
@@ -34,12 +36,13 @@ const Notes = () => {
   }
 
   return (
-    <div className="flex w-full">
+    <>
       <SideMenu isOpen={showSideMenu} />
       {contacts.length ? (
-        <div className="flex flex-col w-full px-5">
+        <Container isHeaderFixed>
           <TopHeader toggleSideMenu={() => setShowSideMenu(prev => !prev)} />
-        </div>
+          <ContactTable data={contacts} />
+        </Container>
       ) : (
         <EmptyState
           image={EmptyNotesListImage}
@@ -49,7 +52,7 @@ const Notes = () => {
           primaryActionLabel="Add New Note"
         />
       )}
-    </div>
+    </>
   );
 };
 
