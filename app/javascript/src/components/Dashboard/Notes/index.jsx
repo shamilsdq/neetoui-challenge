@@ -37,7 +37,11 @@ const Notes = () => {
   return (
     <div className="flex w-full">
       <SideMenu isOpen={showSideMenu} />
-      <FormPane isOpen={showFormPane} close={() => setShowFormPane(false)}>
+      <FormPane
+        entity="Note"
+        isOpen={showFormPane}
+        close={() => setShowFormPane(false)}
+      >
         <Form />
       </FormPane>
 

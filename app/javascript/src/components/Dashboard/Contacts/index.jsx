@@ -38,6 +38,7 @@ const Contacts = () => {
     <>
       <SideMenu isOpen={showSideMenu} />
       <FormPane
+        entity="Contact"
         isOpen={showFormPane}
         close={() => setShowFormPane(false)}
       ></FormPane>
