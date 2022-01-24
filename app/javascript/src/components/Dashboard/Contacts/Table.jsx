@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 import { MenuHorizontal } from "@bigbinary/neeto-icons";
-import { Table, Typography, Avatar, Dropdown } from "neetoui/v2";
+import { Table as NeetoTable, Typography, Avatar, Dropdown } from "neetoui/v2";
 
-const ContactTable = ({ data }) => {
+const Table = ({ data }) => {
   const [pageNumber, setPageNumber] = useState(1);
   const [pageSize, setPageSize] = useState(9);
 
@@ -58,7 +58,7 @@ const ContactTable = ({ data }) => {
   };
 
   return (
-    <Table
+    <NeetoTable
       currentPageNumber={pageNumber}
       defaultPageSize={pageSize}
       handlePageChange={handlePageChange}
@@ -68,4 +68,4 @@ const ContactTable = ({ data }) => {
   );
 };
 
-export default ContactTable;
+export default Table;

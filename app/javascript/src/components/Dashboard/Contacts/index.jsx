@@ -7,8 +7,8 @@ import { Container } from "neetoui/v2/layouts";
 import EmptyState from "components/Common/EmptyState";
 
 import { SAMPLE_CONTACTS } from "./constants";
-import ContactTable from "./ContactTable";
 import SideMenu from "./SideMenu";
+import Table from "./Table";
 import TopHeader from "./TopHeader";
 
 const Contacts = () => {
@@ -36,7 +36,7 @@ const Contacts = () => {
       {contacts.length ? (
         <Container>
           <TopHeader toggleSideMenu={() => setShowSideMenu(prev => !prev)} />
-          <ContactTable data={contacts} />
+          <Table data={contacts} />
         </Container>
       ) : (
         <EmptyState
