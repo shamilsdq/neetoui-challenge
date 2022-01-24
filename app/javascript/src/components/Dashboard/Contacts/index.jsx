@@ -39,7 +39,7 @@ const Notes = () => {
     <>
       <SideMenu isOpen={showSideMenu} />
       {contacts.length ? (
-        <Container isHeaderFixed>
+        <Container>
           <TopHeader toggleSideMenu={() => setShowSideMenu(prev => !prev)} />
           <ContactTable data={contacts} />
         </Container>
@@ -49,7 +49,7 @@ const Notes = () => {
           title="Looks like you don't have any contacts!"
           subtitle="Add your contacts to send customized emails to them."
           primaryAction={() => {}}
-          primaryActionLabel="Add New Note"
+          primaryActionLabel="Add New Contact"
         />
       )}
     </>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-import { Table, Typography, Avatar } from "neetoui/v2";
+import { MenuHorizontal } from "@bigbinary/neeto-icons";
+import { Table, Typography, Avatar, Dropdown } from "neetoui/v2";
 
 const ContactTable = ({ data }) => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -29,18 +30,25 @@ const ContactTable = ({ data }) => {
       key: "email",
       title: "EMAIL",
       width: 250,
+      render: value => <Typography className="text-sm">{value}</Typography>,
     },
     {
-      dataIndex: "createdAt",
-      key: "createdAt",
+      dataIndex: "created_at",
+      key: "created_at",
       title: "CREATED AT",
-      width: 250,
+      width: 200,
+      render: value => <Typography className="text-sm">{value}</Typography>,
     },
     {
       dataIndex: "action",
       key: "action",
-      title: "1",
       width: 50,
+      render: () => (
+        <Dropdown icon={() => <MenuHorizontal />} buttonStyle="text">
+          <li>Edit</li>
+          <li>Delete</li>
+        </Dropdown>
+      ),
     },
   ];
 
@@ -56,7 +64,6 @@ const ContactTable = ({ data }) => {
       handlePageChange={handlePageChange}
       columnData={COLUMNS}
       rowData={data}
-      className="w-full"
     />
   );
 };
