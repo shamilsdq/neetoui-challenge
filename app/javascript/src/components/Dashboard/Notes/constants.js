@@ -43,7 +43,7 @@ const VALIDATION_SCHEMA = yup.object().shape({
   title: yup.string().required(),
   description: yup.string().required(),
   contact: yup.object().nullable().required(),
-  tags: yup.object().nullable().required(),
+  tags: yup.array().nullable().required(),
 });
 
 export { SAMPLE_NOTES, INITIAL_FORM_VALUES, TAG_OPTIONS, VALIDATION_SCHEMA };
