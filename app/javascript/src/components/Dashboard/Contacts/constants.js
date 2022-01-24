@@ -1,5 +1,6 @@
 const SAMPLE_CONTACTS = [
   {
+    id: 1,
     name: "Ronald Richards",
     role: "Owner",
     email: "albert@borer.com",
@@ -7,6 +8,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/med/men/30.jpg",
   },
   {
+    id: 2,
     name: "Jacob Jones",
     role: "Owner",
     email: "albert@borer.com",
@@ -14,6 +16,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/women/30.jpg",
   },
   {
+    id: 3,
     name: "Ronald Richards",
     role: "Owner",
     email: "albert@borer.com",
@@ -21,6 +24,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/med/men/30.jpg",
   },
   {
+    id: 4,
     name: "Jacob Jones",
     role: "Owner",
     email: "albert@borer.com",
@@ -28,6 +32,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/women/30.jpg",
   },
   {
+    id: 5,
     name: "Ronald Richards",
     role: "Owner",
     email: "albert@borer.com",
@@ -35,6 +40,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/med/men/30.jpg",
   },
   {
+    id: 6,
     name: "Jacob Jones",
     role: "Owner",
     email: "albert@borer.com",
@@ -42,6 +48,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/women/30.jpg",
   },
   {
+    id: 7,
     name: "Ronald Richards",
     role: "Owner",
     email: "albert@borer.com",
@@ -49,6 +56,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/med/men/30.jpg",
   },
   {
+    id: 8,
     name: "Jacob Jones",
     role: "Owner",
     email: "albert@borer.com",
@@ -56,6 +64,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/women/30.jpg",
   },
   {
+    id: 9,
     name: "Ronald Richards",
     role: "Owner",
     email: "albert@borer.com",
@@ -63,6 +72,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/med/men/30.jpg",
   },
   {
+    id: 10,
     name: "Jacob Jones",
     role: "Owner",
     email: "albert@borer.com",
@@ -70,6 +80,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/women/30.jpg",
   },
   {
+    id: 11,
     name: "Ronald Richards",
     role: "Owner",
     email: "albert@borer.com",
@@ -77,6 +88,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/med/men/30.jpg",
   },
   {
+    id: 12,
     name: "Jacob Jones",
     role: "Owner",
     email: "albert@borer.com",
@@ -84,6 +96,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/women/30.jpg",
   },
   {
+    id: 13,
     name: "Ronald Richards",
     role: "Owner",
     email: "albert@borer.com",
@@ -91,6 +104,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/med/men/30.jpg",
   },
   {
+    id: 14,
     name: "Jacob Jones",
     role: "Owner",
     email: "albert@borer.com",
@@ -98,6 +112,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/women/30.jpg",
   },
   {
+    id: 15,
     name: "Ronald Richards",
     role: "Owner",
     email: "albert@borer.com",
@@ -105,6 +120,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/med/men/30.jpg",
   },
   {
+    id: 16,
     name: "Jacob Jones",
     role: "Owner",
     email: "albert@borer.com",
@@ -112,6 +128,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/women/30.jpg",
   },
   {
+    id: 17,
     name: "Ronald Richards",
     role: "Owner",
     email: "albert@borer.com",
@@ -119,6 +136,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/med/men/30.jpg",
   },
   {
+    id: 18,
     name: "Jacob Jones",
     role: "Owner",
     email: "albert@borer.com",
@@ -126,6 +144,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/women/30.jpg",
   },
   {
+    id: 19,
     name: "Ronald Richards",
     role: "Owner",
     email: "albert@borer.com",
@@ -133,6 +152,7 @@ const SAMPLE_CONTACTS = [
     image_url: "https://randomuser.me/api/portraits/med/men/30.jpg",
   },
   {
+    id: 20,
     name: "Jacob Jones",
     role: "Owner",
     email: "albert@borer.com",
