@@ -6,6 +6,7 @@ import { Container } from "neetoui/v2/layouts";
 
 import DeleteAlert from "components/Common/DeleteAlert";
 import EmptyState from "components/Common/EmptyState";
+import FormPane from "components/Common/FormPane";
 
 import { SAMPLE_CONTACTS } from "./constants";
 import SideMenu from "./SideMenu";
@@ -15,6 +16,7 @@ import TopHeader from "./TopHeader";
 const Contacts = () => {
   const [loading, setLoading] = useState(true);
   const [showSideMenu, setShowSideMenu] = useState(true);
+  const [showFormPane, setShowFormPane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [contacts, setContacts] = useState([]);
 
@@ -35,9 +37,17 @@ const Contacts = () => {
   return (
     <>
       <SideMenu isOpen={showSideMenu} />
+      <FormPane
+        isOpen={showFormPane}
+        close={() => setShowFormPane(false)}
+      ></FormPane>
+
       {contacts.length ? (
         <Container>
-          <TopHeader toggleSideMenu={() => setShowSideMenu(!showSideMenu)} />
+          <TopHeader
+            toggleSideMenu={() => setShowSideMenu(!showSideMenu)}
+            openFormPane={() => setShowFormPane(true)}
+          />
           <Table
             data={contacts}
             deleteContact={() => setShowDeleteAlert(true)}
@@ -52,6 +62,7 @@ const Contacts = () => {
           primaryActionLabel="Add New Contact"
         />
       )}
+
       <DeleteAlert
         entity="Contact"
         isOpen={showDeleteAlert}
