@@ -25,4 +25,11 @@ const SAMPLE_NOTES = [
   },
 ];
 
-export { SAMPLE_NOTES };
+const INITIAL_FORM_VALUES = {
+  title: "",
+  description: "",
+  contact: null,
+  tags: null,
+};
+
+export { SAMPLE_NOTES, INITIAL_FORM_VALUES };

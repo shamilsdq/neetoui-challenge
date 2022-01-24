@@ -7,7 +7,7 @@ import DeleteAlert from "components/Common/DeleteAlert";
 import EmptyState from "components/Common/EmptyState";
 import FormPane from "components/Common/FormPane";
 
-import { SAMPLE_NOTES } from "./constants";
+import { SAMPLE_NOTES, INITIAL_FORM_VALUES } from "./constants";
 import Form from "./Form";
 import NoteList from "./NoteList";
 import SideMenu from "./SideMenu";
@@ -20,15 +20,15 @@ const Notes = () => {
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [notes, setNotes] = useState([]);
 
-  useEffect(() => {
-    fetchNotes();
-  }, []);
-
   const fetchNotes = () => {
     setLoading(true);
     setNotes(SAMPLE_NOTES);
     setLoading(false);
   };
+
+  useEffect(() => {
+    fetchNotes();
+  }, []);
 
   if (loading) {
     return <PageLoader />;
@@ -41,7 +41,7 @@ const Notes = () => {
         entity="Note"
         isOpen={showFormPane}
         close={() => setShowFormPane(false)}
-        initialValues={{}}
+        initialValues={INITIAL_FORM_VALUES}
       >
         <Form />
       </FormPane>

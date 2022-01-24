@@ -161,4 +161,11 @@ const SAMPLE_CONTACTS = [
   },
 ];
 
-export { SAMPLE_CONTACTS };
+const INITIAL_FORM_VALUES = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  role: null,
+};
+
+export { SAMPLE_CONTACTS, INITIAL_FORM_VALUES };

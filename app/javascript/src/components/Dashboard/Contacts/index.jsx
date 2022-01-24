@@ -8,7 +8,7 @@ import DeleteAlert from "components/Common/DeleteAlert";
 import EmptyState from "components/Common/EmptyState";
 import FormPane from "components/Common/FormPane";
 
-import { SAMPLE_CONTACTS } from "./constants";
+import { SAMPLE_CONTACTS, INITIAL_FORM_VALUES } from "./constants";
 import Form from "./Form";
 import SideMenu from "./SideMenu";
 import Table from "./Table";
@@ -21,15 +21,15 @@ const Contacts = () => {
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [contacts, setContacts] = useState([]);
 
-  useEffect(() => {
-    fetchContacts();
-  }, []);
-
   const fetchContacts = () => {
     setLoading(true);
     setContacts(SAMPLE_CONTACTS);
     setLoading(false);
   };
+
+  useEffect(() => {
+    fetchContacts();
+  }, []);
 
   if (loading) {
     return <PageLoader />;
@@ -42,7 +42,7 @@ const Contacts = () => {
         entity="Contact"
         isOpen={showFormPane}
         close={() => setShowFormPane(false)}
-        initialValues={{}}
+        initialValues={INITIAL_FORM_VALUES}
       >
         <Form />
       </FormPane>
