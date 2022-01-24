@@ -34,6 +34,11 @@ const INITIAL_FORM_VALUES = {
   tags: null,
 };
 
+const TAG_OPTIONS = [
+  { id: 1, name: "big binary" },
+  { id: 2, name: "tb3" },
+];
+
 const VALIDATION_SCHEMA = yup.object().shape({
   title: yup.string().required(),
   description: yup.string().required(),
@@ -41,4 +46,4 @@ const VALIDATION_SCHEMA = yup.object().shape({
   tags: yup.object().nullable().required(),
 });
 
-export { SAMPLE_NOTES, INITIAL_FORM_VALUES, VALIDATION_SCHEMA };
+export { SAMPLE_NOTES, INITIAL_FORM_VALUES, TAG_OPTIONS, VALIDATION_SCHEMA };

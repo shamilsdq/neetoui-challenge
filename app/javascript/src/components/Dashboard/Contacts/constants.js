@@ -170,6 +170,11 @@ const INITIAL_FORM_VALUES = {
   role: null,
 };
 
+const ROLE_OPTIONS = [
+  { id: 1, name: "designer" },
+  { id: 2, name: "analyst" },
+];
+
 const VALIDATION_SCHEMA = yup.object().shape({
   firstName: yup.string().required(),
   lastName: yup.string().required(),
@@ -177,4 +182,9 @@ const VALIDATION_SCHEMA = yup.object().shape({
   role: yup.object().nullable().required(),
 });
 
-export { SAMPLE_CONTACTS, INITIAL_FORM_VALUES, VALIDATION_SCHEMA };
+export {
+  SAMPLE_CONTACTS,
+  INITIAL_FORM_VALUES,
+  ROLE_OPTIONS,
+  VALIDATION_SCHEMA,
+};
