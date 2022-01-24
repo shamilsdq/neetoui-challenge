@@ -41,6 +41,7 @@ const Notes = () => {
         entity="Note"
         isOpen={showFormPane}
         close={() => setShowFormPane(false)}
+        initialValues={{}}
       >
         <Form />
       </FormPane>

@@ -42,6 +42,7 @@ const Contacts = () => {
         entity="Contact"
         isOpen={showFormPane}
         close={() => setShowFormPane(false)}
+        initialValues={{}}
       >
         <Form />
       </FormPane>

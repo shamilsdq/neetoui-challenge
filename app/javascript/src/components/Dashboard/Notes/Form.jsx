@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Input, Textarea, Select } from "neetoui/v2";
+import { Input, Textarea, Select } from "neetoui/v2/formik";
 
 const Form = () => (
-  <form className="w-full px-2 space-y-6">
+  <div className="w-full px-2 space-y-6">
     <Input
       required
       label="Title"
@@ -28,7 +28,7 @@ const Form = () => (
       placeholder="Select Role"
     />
     <Select required label="Tags" name="tags" placeholder="Select Role" />
-  </form>
+  </div>
 );
 
 export default Form;

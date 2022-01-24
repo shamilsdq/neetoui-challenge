@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Input, Select } from "neetoui/v2";
+import { Input, Select } from "neetoui/v2/formik";
 
 const Form = () => (
-  <form className="w-full px-2 space-y-6">
+  <div className="w-full px-2 space-y-6">
     <div className="flex space-x-5">
       <Input
         required
@@ -33,7 +33,7 @@ const Form = () => (
     />
 
     <Select required label="Role" name="role" placeholder="Select Role" />
-  </form>
+  </div>
 );
 
 export default Form;
