@@ -1,3 +1,5 @@
+import * as yup from "yup";
+
 const SAMPLE_CONTACTS = [
   {
     id: 1,
@@ -161,4 +163,28 @@ const SAMPLE_CONTACTS = [
   },
 ];
 
-export { SAMPLE_CONTACTS };
+const INITIAL_FORM_VALUES = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  role: null,
+};
+
+const ROLE_OPTIONS = [
+  { id: 1, name: "designer" },
+  { id: 2, name: "analyst" },
+];
+
+const VALIDATION_SCHEMA = yup.object().shape({
+  firstName: yup.string().required(),
+  lastName: yup.string().required(),
+  email: yup.string().email().required(),
+  role: yup.object().nullable().required(),
+});
+
+export {
+  SAMPLE_CONTACTS,
+  INITIAL_FORM_VALUES,
+  ROLE_OPTIONS,
+  VALIDATION_SCHEMA,
+};

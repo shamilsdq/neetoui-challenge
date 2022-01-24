@@ -4,7 +4,7 @@ import { Search, Plus } from "@bigbinary/neeto-icons";
 import { Input, Button } from "neetoui/v2";
 import { Header } from "neetoui/v2/layouts";
 
-const TopHeader = ({ toggleSideMenu }) => (
+const TopHeader = ({ toggleSideMenu, openFormPane }) => (
   <Header
     title="All Contacts"
     menuBarToggle={toggleSideMenu}
@@ -15,7 +15,7 @@ const TopHeader = ({ toggleSideMenu }) => (
           prefix={<Search />}
           className="w-80"
         />
-        <Button label="Add Contact" icon={Plus} />
+        <Button label="Add Contact" icon={Plus} onClick={openFormPane} />
       </div>
     }
   />

@@ -1,3 +1,5 @@
+import * as yup from "yup";
+
 const SAMPLE_NOTES = [
   {
     title: "How to claim the warranty?",
@@ -25,4 +27,23 @@ const SAMPLE_NOTES = [
   },
 ];
 
-export { SAMPLE_NOTES };
+const INITIAL_FORM_VALUES = {
+  title: "",
+  description: "",
+  contact: null,
+  tags: null,
+};
+
+const TAG_OPTIONS = [
+  { id: 1, name: "big binary" },
+  { id: 2, name: "tb3" },
+];
+
+const VALIDATION_SCHEMA = yup.object().shape({
+  title: yup.string().required(),
+  description: yup.string().required(),
+  contact: yup.object().nullable().required(),
+  tags: yup.array().nullable().required(),
+});
+
+export { SAMPLE_NOTES, INITIAL_FORM_VALUES, TAG_OPTIONS, VALIDATION_SCHEMA };

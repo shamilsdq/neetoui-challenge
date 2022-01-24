@@ -5,9 +5,14 @@ import { PageLoader } from "neetoui/v2";
 
 import DeleteAlert from "components/Common/DeleteAlert";
 import EmptyState from "components/Common/EmptyState";
+import FormPane from "components/Common/FormPane";
 
-import { SAMPLE_NOTES } from "./constants";
-import FormPane from "./FormPane";
+import {
+  SAMPLE_NOTES,
+  INITIAL_FORM_VALUES,
+  VALIDATION_SCHEMA,
+} from "./constants";
+import Form from "./Form";
 import NoteList from "./NoteList";
 import SideMenu from "./SideMenu";
 import TopHeader from "./TopHeader";
@@ -19,15 +24,15 @@ const Notes = () => {
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [notes, setNotes] = useState([]);
 
-  useEffect(() => {
-    fetchNotes();
-  }, []);
-
   const fetchNotes = () => {
     setLoading(true);
     setNotes(SAMPLE_NOTES);
     setLoading(false);
   };
+
+  useEffect(() => {
+    fetchNotes();
+  }, []);
 
   if (loading) {
     return <PageLoader />;
@@ -36,7 +41,15 @@ const Notes = () => {
   return (
     <div className="flex w-full">
       <SideMenu isOpen={showSideMenu} />
-      <FormPane isOpen={showFormPane} close={() => setShowFormPane(false)} />
+      <FormPane
+        entity="Note"
+        isOpen={showFormPane}
+        close={() => setShowFormPane(false)}
+        initialValues={INITIAL_FORM_VALUES}
+        validationSchema={VALIDATION_SCHEMA}
+      >
+        <Form />
+      </FormPane>
 
       {notes.length ? (
         <div className="flex flex-col w-full px-5">
