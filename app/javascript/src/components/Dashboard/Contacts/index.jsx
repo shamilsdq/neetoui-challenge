@@ -35,7 +35,7 @@ const Contacts = () => {
       <SideMenu isOpen={showSideMenu} />
       {contacts.length ? (
         <Container>
-          <TopHeader toggleSideMenu={() => setShowSideMenu(prev => !prev)} />
+          <TopHeader toggleSideMenu={() => setShowSideMenu(!showSideMenu)} />
           <Table data={contacts} />
         </Container>
       ) : (
